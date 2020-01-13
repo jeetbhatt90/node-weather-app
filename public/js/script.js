@@ -1,4 +1,4 @@
-console.log('Coming from javascript file')
+console.log('Coming from from javascript file')
 
 // fetch('http://localhost:3000/weather?address=!').then((response)=>{ //it take only only argument that is response
 //     response.json().then((data)=>{
