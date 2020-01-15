@@ -26,7 +26,8 @@ weatherForm.addEventListener('submit', (e)=>{
     messageTwo.textContent = ' '
     console.log('testing')
 
-    fetch('http://localhost:3000/weather?address=' +location).then((response)=>{ //it take only only argument that is response
+    //fetch('http://localhost:3000/weather?address=' +location).then((response)=>{ //it take only only argument that is response
+    fetch('/weather?address=' +location).then((response)=>{ // we modified it so that it can be used for heroku as well
     response.json().then((data)=>{
         if(data.error){
             //console.log(data.error)

@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode_export')
 const forecast = require('./utils/forecast_export')
 
 const app = express()
+const port = process.env.PORT || 3000 // this is needed to deploy in heroku , the 3000 is for local
 
 // console.log(__dirname)  //gives the directory path
 // console.log(__filename) //gives the file path
@@ -114,7 +115,12 @@ app.get('*',(req,res)=>{
     })
 })
 
+//only for local
+// app.listen(3000, ()=>{
+//     console.log('Server is up on Port 3000')
+// })
 
-app.listen(3000, ()=>{
-    console.log('Server is up on Port 3000')
+ //changing 3000 to port so that it can be used by heroku and local both
+app.listen(port, ()=>{
+    console.log('Server is up on Port '+port)
 })
